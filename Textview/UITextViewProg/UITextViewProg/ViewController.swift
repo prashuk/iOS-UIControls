@@ -19,7 +19,22 @@ class ViewController: UIViewController {
         textview.center = self.view.center
         textview.textAlignment = .justified
         
-        textview.backgroundColor = .red
+        textview.backgroundColor = .lightGray
+        textview.backgroundColor = UIColor(red: 39/255, green: 53/255, blue: 182/255, alpha: 1)
+        
+        textview.font = UIFont.systemFont(ofSize: 25)
+        textview.font = UIFont(name: "Verdana", size: 20)
+        
+        textview.autocapitalizationType = .allCharacters
+        textview.dataDetectorTypes = .link
+        
+        textview.isHidden = false
+        textview.isEditable = true
+        
+        textview.layer.cornerRadius = 10
+        
+        textview.autocorrectionType = .yes
+        textview.spellCheckingType = .yes
         
         self.view.addSubview(textview)
     }
