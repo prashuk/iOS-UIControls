@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,17 @@ class ViewController: UIViewController {
         textview.autocorrectionType = .yes
         textview.spellCheckingType = .yes
         
+//        textview.delegate = self
+        
+        let myGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOutside))
+        
+        self.view.addGestureRecognizer(myGesture)
         self.view.addSubview(textview)
+        
+    }
+    
+    @objc func tappedOutside(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 
